@@ -13,6 +13,6 @@ class DefaultController extends Controller
 
     public function bookAction($book)
     {
-        return $this->render('KasiaEpopeeBundle:Book:k'.$book.'.html.twig', array('book'=>$book));
+        return $this->render('KasiaEpopeeBundle:Default:index.html.twig', array('book'=>$book));
     }
 }

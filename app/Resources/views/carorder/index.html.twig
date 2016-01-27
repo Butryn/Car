@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>CarOrder list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Carid</th>
+                <th>Userid</th>
+                <th>Orderdate</th>
+                <th>Returndate</th>
+                <th>Opinion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carOrder in carOrders %}
+            <tr>
+                <td><a href="{{ path('carorder_show', { 'id': carOrder.id }) }}">{{ carOrder.id }}</a></td>
+                <td>{{ carOrder.carId }}</td>
+                <td>{{ carOrder.userId }}</td>
+                <td>{% if carOrder.orderDate %}{{ carOrder.orderDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if carOrder.returnDate %}{{ carOrder.returnDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ carOrder.opinion }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('carorder_show', { 'id': carOrder.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('carorder_edit', { 'id': carOrder.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('carorder_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

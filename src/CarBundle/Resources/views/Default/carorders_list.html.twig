@@ -1,0 +1,14 @@
+{% extends 'CarBundle:Default:index.html.twig' %}
+{% block content %}
+<table>
+	{% for caro in carorder %}
+	<tr>
+		<td>{{caro.carId}}</td>
+		<td>{{caro.userId}}</td>
+		<td>{{caro.orderDate}}</td>
+		<td>{{caro.returnDate}}</td>
+		<td>{{caro.opinion}}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

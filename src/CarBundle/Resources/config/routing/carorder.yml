@@ -1,0 +1,24 @@
+carorder_index:
+    path:     /
+    defaults: { _controller: "CarBundle:CarOrder:index" }
+    methods:  GET
+
+carorder_show:
+    path:     /{id}/show
+    defaults: { _controller: "CarBundle:CarOrder:show" }
+    methods:  GET
+
+carorder_new:
+    path:     /new
+    defaults: { _controller: "CarBundle:CarOrder:new" }
+    methods:  [GET, POST]
+
+carorder_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CarBundle:CarOrder:edit" }
+    methods:  [GET, POST]
+
+carorder_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CarBundle:CarOrder:delete" }
+    methods:  DELETE

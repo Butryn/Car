@@ -11,3 +11,7 @@ kasia_epopee_book:
 kasia_epopee_reflection_form:
     path:     /reflection/insert
     defaults: { _controller: KasiaEpopeeBundle:Reflection:insert }
+
+kasia_epopee_reflection_index:
+    path:     /reflections
+    defaults: { _controller: KasiaEpopeeBundle:Reflection:index } 

@@ -1,0 +1,15 @@
+{% extends 'CarBundle:Default:index.html.twig' %}
+{% block content %}
+<table>
+	{% for car in cars %}
+	<tr>
+		<td><img src="{{car.img}}"</td>
+		<td>{{car.brand}}</td>
+		<td>{{car.model}}</td>
+		<td>{{car.power}}</td>
+		<td>{{car.type}}</td>
+		<td>{{car.price}}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

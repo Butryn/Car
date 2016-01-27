@@ -1,0 +1,17 @@
+{% extend 'KasiaEpopeeBundle::bars.html.twig' %}
+{% block content %}
+<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+			</tr>
+		</thead>
+	<tbody>
+			{% for reflection in reflections %}
+				<tr>
+<td>{{reflection.id}}</td>
+<td>{{reflection.createAt\date('d'.'m'.'Y')}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>

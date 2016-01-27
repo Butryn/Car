@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Kasia\HelloBundle\KasiaHelloBundle(),
             new Kasia\EpopeeBundle\KasiaEpopeeBundle(),
+            new CarBundle\CarBundle(),
+			new FOS\UserBundle\FOSUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

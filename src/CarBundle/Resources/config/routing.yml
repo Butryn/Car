@@ -1,0 +1,16 @@
+car_car:
+    resource: "@CarBundle/Resources/config/routing/car.yml"
+    prefix:   /car
+
+
+car_homepage:
+    path:     /
+    defaults: { _controller: CarBundle:Default:index }
+
+car_order:
+    path:     /order
+    defaults: { _controller: CarBundle:Default:order }
+
+car_carorder: 
+    resource: "@CarBundle/Resources/config/routing/carorder.yml"
+    prefix:   /carorder

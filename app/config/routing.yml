@@ -1,3 +1,7 @@
+car:
+    resource: "@CarBundle/Resources/config/routing.yml"
+    prefix:   /
+
 kasia_epopee:
     resource: "@KasiaEpopeeBundle/Resources/config/routing.yml"
     prefix:   /pt
@@ -9,3 +13,6 @@ kasia_hello:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

@@ -11,22 +11,25 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 		
-		<link rel="stylesheet" type="text/css" href"{{asset('bundles/kasiaepopee/css/style.css')}}>
+		<link rel="stylesheet" type="text/css" href="{{asset('bundles/carbundle/style.css')}}"> 
 		
-		<title>Pan Tadeusz</title>
+		<title>Wypożyczalnia</title>
 	</head>	
 	<body>
 		<header class="page-header">
 			<div class="container text-center">
-				<h1>Pan Tadeusz, czyli ostatni zajazd na Litwie</h1>
-				<h2>Historia szlachecka z roku 1811 i 1812 we dwunastu księgach wierszem</h2>
+				<h1>Wypożyczalnia</h1>
 			</div>
 		</header>
 		<div class="container text-center">
 		<div class="container" id="menu">
 			<div class="row">
 				{% block menu %}
-					<p>Tu będzie menu. Jestem w layoucie. </p>
+					<ul class="nav nav-pills">
+						<li role="nawigacja" class="active"><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php">Strona Główna</a></li>
+						<li role="nawigacja"><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php/login">Zaloguj się</a></li>
+						<li role="nawigacja"><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php/order">Zamówienie</a></li>
+					</ul>
 				{% endblock %}
 			</div>
 		</div>
@@ -46,7 +49,7 @@
 		</div>
 		<footer>
 			<div class="container">
-				<p>(c) Katarzyna Wójcik Uniwersytet Ekonomiczny w Krakowie</p>
+				<p>(c) Roksana Butryn Uniwersytet Ekonomiczny w Krakowie</p>
 			</div>
 		</footer>
 	</body>	
