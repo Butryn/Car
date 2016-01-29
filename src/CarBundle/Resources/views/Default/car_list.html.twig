@@ -9,6 +9,7 @@
 		<td>{{car.power}}</td>
 		<td>{{car.type}}</td>
 		<td>{{car.price}}</td>
+		<td><a class="btn btn-primary" href="{% if app.user %}{{'order'}}/{{car.id}}{% else %}{{path('fos_user_security_login')}}{% endif %}">Wypożycz</a></td>
 	</tr>
 	{% endfor %}
 </table>
