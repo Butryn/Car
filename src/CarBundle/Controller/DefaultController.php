@@ -57,7 +57,7 @@ class DefaultController extends Controller
 		$user = $this->container->get('security.context')->getToken()->getUser();
 		$em = $this->container->get('doctrine')->getManager();
 		$repo = $em->getRepository('CarBundle:CarOrder');
-		$orders = $repo->find($user->getId());
+		$orders = $repo->findBy( array('userId' => $user->getId()));
         return $this->render('CarBundle:Default:history.html.twig', array('orders' => $orders));
     }
 }

@@ -1,0 +1,24 @@
+{% extends 'CarBundle:Default:index.html.twig' %}
+{% block content %}
+<table>
+<thead>
+                <tr>
+                  <th></th>
+                  <th>Twój identyfikator</th>
+				  <th>Identyfikator samochodu</th>
+                  <th>Data wypo¿yczenia</th>
+                  <th>Data zwrotu</th>
+                </tr>
+              </thead>
+<tbody>
+	{% for order in orders %}
+	<tr>
+		<td>{{order.userId}}</td>
+		<td>{{order.carId}}</td>
+		<td>{{order.orderDate|date("m/d/Y g:ia")}}</td>
+		<td>{{order.returnDate|date("m/d/Y g:ia")}}</td>
+	</tr>
+	{% endfor %}
+</tbody>
+</table>
+{% endblock %}
