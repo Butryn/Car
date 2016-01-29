@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use CarBundle\Entity\CarOrder;
-use CarBundle\Form\CarOrderType;
+use CarBundle\Form\CarOrderCrudType;
 
 /**
  * CarOrder controller.
@@ -36,7 +36,7 @@ class CarOrderController extends Controller
     public function newAction(Request $request)
     {
         $carOrder = new CarOrder();
-        $form = $this->createForm(new CarOrderType(), $carOrder);
+        $form = $this->createForm(new CarOrderCrudType(), $carOrder);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

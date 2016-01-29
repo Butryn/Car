@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CarOrderType extends AbstractType
+class CarOrderCrudType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,11 +15,11 @@ class CarOrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            //->add('carId')
-            //->add('userId')
+            ->add('carId')
+            ->add('userId')
             ->add('orderDate', 'datetime')
             ->add('returnDate', 'datetime')
-            //->add('opinion')
+            ->add('opinion')
         ;
     }
     
