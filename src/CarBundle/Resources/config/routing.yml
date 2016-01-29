@@ -14,3 +14,7 @@ car_order:
 car_carorder: 
     resource: "@CarBundle/Resources/config/routing/carorder.yml"
     prefix:   /carorder
+
+car_homepage:
+    path:     /history
+    defaults: { _controller: CarBundle:Default:history }

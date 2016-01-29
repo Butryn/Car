@@ -26,16 +26,23 @@ class DefaultController extends Controller
 		// repozytorium sluzo do laczenia z konkretna encja
 		$repo = $em->getRepository('CarBundle:Car');
 		$car = $repo->find($id); // wyszukujemy auto z konkretnym id 
+		$user = $this->container->get('security.context')->getToken()->getUser(); // pobieramy uzytkownika
 		$carOrder = new CarOrder();
+		$carOrder->setUserId($user->getId()); // to przekazalo nam userId do zamowienia
+		$carOrder->setCarId($id); // to przekzało nam id cara do zamowienia
         $form = $this->createForm(new CarOrderType(), $carOrder); // tworzy formularz
         $form->handleRequest($request); // obsluga rzadania
 
         if ($form->isSubmitted() && $form->isValid()) { // spr czy jest wypelniony  i zatwoerdzony
             $em = $this->getDoctrine()->getManager();
+			$orderDate = $form['orderDate']->getData(); // pobieramy data wypoz z formularza
+			$returnDate = $form['returnDate']->getData(); // pobieramyd date zwrotu 
+			$carOrder->setOrderDate($orderDate);
+			$carOrder->setReturnDate($returnDate);
             $em->persist($carOrder); // informacja o tym, ze jest obiekt do zapisania
             $em->flush(); // zapisuje do bazy danych
 
-            return $this->redirectToRoute('carorder_show', array('id' => $carorder->getId()));
+            return $this->redirectToRoute('car_confirm');
         }
 
         return $this->render('CarBundle:Default:carorder.html.twig', array(
@@ -45,4 +52,12 @@ class DefaultController extends Controller
         ));
     }
 
+	 public function historyAction()
+    {
+		$user = $this->container->get('security.context')->getToken()->getUser();
+		$em = $this->container->get('doctrine')->getManager();
+		$repo = $em->getRepository('CarBundle:CarOrder');
+		$orders = $repo->find($user->getId());
+        return $this->render('CarBundle:Default:history.html.twig', array('orders' => $orders));
+    }
 }

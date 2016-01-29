@@ -10,4 +10,8 @@
 		<td>{{car.price}}</td>
 	</tr>
 </table>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Wypożycz" />
+    {{ form_end(form) }}
 {% endblock %}
