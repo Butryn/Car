@@ -8,7 +8,7 @@ car_homepage:
     defaults: { _controller: CarBundle:Default:index }
 
 car_order:
-    path:     /order
+    path:     /order/{id}
     defaults: { _controller: CarBundle:Default:order }
 
 car_carorder: 
