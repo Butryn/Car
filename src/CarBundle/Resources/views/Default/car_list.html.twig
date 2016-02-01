@@ -7,6 +7,14 @@
 	</div>
 	<div class="panel-body">
 		<table class="table">
+			<tr>
+				<td>Samochód</td>
+				<td>Marka</td>
+				<td>Model</td>
+				<td>Moc</td>
+				<td>Typ</td>
+				<td class="text-center">Cena za dzień</td>
+			</tr>
 			{% for car in cars %}
 			
 			<tr>
@@ -15,7 +23,7 @@
 				<td><b>{{car.model}}</b></td>
 				<td>{{car.power}}</td>
 				<td>{{car.type}}</td>
-				<td>{{car.price}}</td>
+				<td>{{car.price}}zł</td>
 				<td><a class="btn btn-primary" href="{% if app.user %}{{'order'}}/{{car.id}}{% else %}{{path('fos_user_security_login')}}{% endif %}"><span class="glyphicon glyphicon glyphicon-ok"></span> Wypożycz</a></td>
 			</tr>
 			{% endfor %}
