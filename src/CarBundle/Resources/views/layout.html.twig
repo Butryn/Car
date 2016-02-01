@@ -47,7 +47,7 @@
 							<li role="nawigacja"><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php/register">Zarejestruj się</a></li>
 						</ul>
 					{% endif %}
-				<br><br><br>	
+				<br><br>	
 				{% endblock %}
 			</div>
 		</div>
@@ -55,7 +55,15 @@
 			<div class="row">
 				<div id="sidebar" class="col-sm-12 col-lg-2">
 					{% block sidebar %}
-						<p>Pasek boczny. Jestem w layoucie. </p>
+						<div class="panel panel-default">
+							<div class="panel-heading">O nas</div>
+							<div class="panel-body">
+								<p>Pasek boczny. Jestem w layoucie. </p>
+							</div>	
+						</div>
+						<div class="alert alert-info" role="alert">
+							Kontakt:
+						</div>
 					{% endblock %}
 				</div>
 				<div id="content" class="col-sm-12 col-lg-10">
