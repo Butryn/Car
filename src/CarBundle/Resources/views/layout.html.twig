@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+		
+		<link rel="stylesheet" type="text/css" href="{{asset('bundles/carbundle/style.css')}}"> 
+		
+		<title>Wypożyczalnia</title>
+	</head>	
+	<body>
+		<header class="page-header">
+			<div class="container text-center">
+				<div class="row">
+					<div class="col-sm-12 col-lg-6 col-lg-offset-3">
+						<h1>Wypożyczalnia "AutoKot"</h1>
+						<h4>Najlepsze samochody w mieście</h4>
+					</div>
+					<div class="col-sm-6 col-lg-2">
+						<a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php"> <img class="img-responsive" src="http://cloudkingdom.com/Samples/Images/CarGames.jpg"></a>
+					</div>
+				</div>	
+			</div>
+		</header>
+		<div class="container text-center">
+		<div class="container" id="menu">
+			<div class="row">
+				{% block menu %}
+				
+					{% if app.user %}					
+						<ul class="nav nav-pills">
+							<li role="nawigacja" class="active"><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php">Strona Główna</a></li>
+							<li role="nawigacja" ><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php/historia">Historia zamówień</a></li>
+							<li role="nawigacja" ><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php/logout">Wyloguj się</a></li>
+						</ul>	
+					{% else %}	
+						<ul class="nav nav-pills">						
+							<li role="nawigacja" class="active"><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php">Strona Główna</a></li>
+							<li role="nawigacja"><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php/login">Zaloguj się</a></li>
+							<li role="nawigacja"><a href="http://v-ie.uek.krakow.pl/~s179849/app_dev.php/register">Zarejestruj się</a></li>
+						</ul>
+					{% endif %}
+				<br><br><br>	
+				{% endblock %}
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div id="sidebar" class="col-sm-12 col-lg-2">
+					{% block sidebar %}
+						<p>Tu będzie sidebar. Jestem w layoucie. </p>
+					{% endblock %}
+				</div>
+				<div id="content" class="col-sm-12 col-lg-10">
+					{% block content %}
+						<p>Tu będzie content. Jestem w layoucie. </p>
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<p>(c) Roksana Butryn, Aleksandra Wojdyła, Bartłomiej Wróbel - Uniwersytet Ekonomiczny w Krakowie</p>
+			</div>
+		</footer>
+	</body>	
+</html>
+
