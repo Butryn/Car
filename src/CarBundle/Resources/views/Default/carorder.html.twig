@@ -1,17 +1,25 @@
 {% extends 'CarBundle::layout.html.twig' %}
 {% block content %}
-<table>
-	<tr>
-		<td><img src="{{car.img}}"</td>
-		<td>{{car.brand}}</td>
-		<td>{{car.model}}</td>
-		<td>{{car.power}}</td>
-		<td>{{car.type}}</td>
-		<td>{{car.price}}</td>
-	</tr>
-</table>
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Wypożycz" />
-    {{ form_end(form) }}
+<div class="col-sm-12 col-lg-6 col-lg-offset-3">
+<div class="panel panel-info">
+  <div class="panel-heading"><h2>Wypożycz samochód</h2></div>
+	  <div class="panel-body">
+		<ul class="list-group">	
+			<li class="list-group-item"><img class="img-responsive" src="{{car.img}}"</li>
+			<li class="list-group-item"><b>Marka:</b> {{car.brand}}</li>
+			<li class="list-group-item"><b>Model:</b> {{car.model}}</li>
+			<li class="list-group-item"><b>Moc:</b> {{car.power}}</li>
+			<li class="list-group-item"><b>Typ:</b> {{car.type}}</li>
+			<li class="list-group-item"><b>Cena za dzień:</b> {{car.price}}</li>
+		</ul>
+
+		<div class="alert alert-info" role="alert">
+			{{ form_start(form) }}
+				{{ form_widget(form) }}
+				<input type="submit" class="btn btn-PRIMARY" value="Wypożycz" />
+			{{ form_end(form) }}
+		</div>	
+	</div>
+</div>	
+</div>
 {% endblock %}
