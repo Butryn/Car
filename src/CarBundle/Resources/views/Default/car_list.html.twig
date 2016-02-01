@@ -1,16 +1,25 @@
 {% extends 'CarBundle::layout.html.twig' %}
 {% block content %}
-<table>
-	{% for car in cars %}
-	<tr>
-		<td><img src="{{car.img}}"</td>
-		<td>{{car.brand}}</td>
-		<td>{{car.model}}</td>
-		<td>{{car.power}}</td>
-		<td>{{car.type}}</td>
-		<td>{{car.price}}</td>
-		<td><a class="btn btn-primary" href="{% if app.user %}{{'order'}}/{{car.id}}{% else %}{{path('fos_user_security_login')}}{% endif %}">Wypożycz</a></td>
-	</tr>
-	{% endfor %}
-</table>
-{% endblock %}
+
+<div class="panel panel-info">
+	 <div class="panel-heading">
+		<h2>Nasze samochody:</h1>
+	</div>
+	<div class="panel-body">
+		<table class="table">
+			{% for car in cars %}
+			
+			<tr>
+				<td><img class="img-responsive" src="{{car.img}}"</td>
+				<td><b>{{car.brand}}</b></td>
+				<td><b>{{car.model}}</b></td>
+				<td>{{car.power}}</td>
+				<td>{{car.type}}</td>
+				<td>{{car.price}}</td>
+				<td><a class="btn btn-primary" href="{% if app.user %}{{'order'}}/{{car.id}}{% else %}{{path('fos_user_security_login')}}{% endif %}"><span class="glyphicon glyphicon glyphicon-ok"></span> Wypożycz</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+	{% endblock %}
