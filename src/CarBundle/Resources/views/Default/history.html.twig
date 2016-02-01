@@ -1,24 +1,33 @@
 {% extends 'CarBundle::layout.html.twig' %}
 {% block content %}
-<table>
-<thead>
-                <tr>
-                  <th></th>
-                  <th>Tw�j identyfikator</th>
-				  <th>Identyfikator samochodu</th>
-                  <th>Data wypo�yczenia</th>
-                  <th>Data zwrotu</th>
-                </tr>
-              </thead>
-<tbody>
-	{% for order in orders %}
-	<tr>
-		<td>{{order.userId}}</td>
-		<td>{{order.carId}}</td>
-		<td>{{order.orderDate|date("m/d/Y g:ia")}}</td>
-		<td>{{order.returnDate|date("m/d/Y g:ia")}}</td>
-	</tr>
-	{% endfor %}
-</tbody>
-</table>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+	<h2>Historia wypożyczeń:</h1>
+</div>
+<div class="panel-body">
+	<table class="table">
+	<thead>
+					<tr>
+					  
+					  <th>Twój identyfikator</th>
+					  <th>Identyfikator samochodu</th>
+					  <th>Data wypożyczenia</th>
+					  <th>Data zwrotu</th>
+					</tr>
+				  </thead>
+	<tbody>
+		{% for order in orders %}
+		<tr>
+			<td>{{order.userId}}</td>
+			<td>{{order.carId}}</td>
+			<td>{{order.orderDate|date("m/d/Y g:ia")}}</td>
+			<td>{{order.returnDate|date("m/d/Y g:ia")}}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+</div>	
+<div class="panel-footer">Dziękujemy za skorzystanie z naszych usług!</div>
+</div>
 {% endblock %}
