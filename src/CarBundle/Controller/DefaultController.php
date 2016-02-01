@@ -61,4 +61,8 @@ class DefaultController extends Controller
         return $this->render('CarBundle:Default:history.html.twig', array('orders' => $orders));
     }
 	
+	public function outAction()
+	{
+		return $this->render('CarBundle:Default:out.html.twig');
+	}
 }
