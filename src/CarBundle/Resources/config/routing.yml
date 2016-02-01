@@ -18,3 +18,7 @@ car_carorder:
 car_history:
     path:     /history
     defaults: { _controller: CarBundle:Default:history }
+
+car_out:
+    path:     /out
+    defaults: { _controller: CarBundle:Default:out } 

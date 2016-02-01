@@ -42,7 +42,7 @@ class DefaultController extends Controller
             $em->persist($carOrder); // informacja o tym, ze jest obiekt do zapisania
             $em->flush(); // zapisuje do bazy danych
 
-            return $this->redirectToRoute('car_confirm');
+            return $this->redirectToRoute('car_out');
         }
 
         return $this->render('CarBundle:Default:carorder.html.twig', array(
@@ -60,4 +60,5 @@ class DefaultController extends Controller
 		$orders = $repo->findBy( array('userId' => $user->getId()));
         return $this->render('CarBundle:Default:history.html.twig', array('orders' => $orders));
     }
+	
 }
