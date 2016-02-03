@@ -31,7 +31,7 @@ class CarController extends Controller
 
     /**
      * Creates a new Car entity.
-     *
+     *@param Request $request request from form
      */
     public function newAction(Request $request)
     {
@@ -55,7 +55,7 @@ class CarController extends Controller
 
     /**
      * Finds and displays a Car entity.
-     *
+     *@param Car $car car to edit
      */
     public function showAction(Car $car)
     {
@@ -69,7 +69,8 @@ class CarController extends Controller
 
     /**
      * Displays a form to edit an existing Car entity.
-     *
+     *@param Request $request request from form
+	 *@param Car $car car to edit
      */
     public function editAction(Request $request, Car $car)
     {
@@ -94,7 +95,8 @@ class CarController extends Controller
 
     /**
      * Deletes a Car entity.
-     *
+     *@param Request $request request from form
+	 *@param Car $car car to edit
      */
     public function deleteAction(Request $request, Car $car)
     {
